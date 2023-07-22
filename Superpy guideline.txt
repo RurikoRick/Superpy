@@ -1,0 +1,131 @@
+THE SUPERPY GUIDELINE
+
+Requirements:
+- Python (3.10.2 or higher)
+
+There are some modules you have to download in the terminal to acces this code:
+- import argparse (build in)
+- import os (build in)
+- import pandas (try: pip install pandas or pip3 install pandas)
+- import matplotlib (try: pip install matplotlib)
+
+Positional arguments:
+  {buy,sell,export,profit,plot,reset} 
+    buy                 Buy a product
+    sell                Sell a product
+    export              Export selection of data on a specific date
+    profit              Calculate profit on a specific date
+    plot                Plot bar graph of products in inventory, bought or sold list
+    reset               Reset selection of files or all files
+
+
+1. Buy Command:
+Type: (py or python) main.py buy --product PRODUCT --buy-price PRICE --quantity QUANTITY --buy-date BUY_DATE --exp-date EXP_DATE
+
+Arguments:
+  -h, --help           show this help message and exit
+  --product PRODUCT    product name
+  --buy-price PRICE    buy price per product
+  --quantity QUANTITY  quantity of product
+  --buy-date BUY_DATE  product buy date (format YYYY-MM-DD)
+  --exp-date EXP_DATE  product expiration date (format YYYY-MM-DD)
+
+Examples:
+py main.py buy --product Steak --buy-price 2.8 --quantity 10 --buy-date 2023-03-08 --exp-date 2025-08-08
+py main.py buy --product Icecream--buy-price 0.5 --quantity 60 --buy-date 2023-06-08 --exp-date 2024-03-02
+
+
+2. Sell Command:
+Type: (py or python) main.py sell --product PRODUCT --sell-price PRICE --quantity QUANTITY --sell-date SELL_DATE
+
+Arguments:
+  -h, --help            show this help message and exit
+  --product PRODUCT     product name
+  --sell-price PRICE    sell price per product
+  --quantity QUANTITY   quantity of product
+  --sell-date SELL_DATE product sell date (format YYYY-MM-DD)
+
+Examples:
+py main.py sell --product Steak --sell-price 7.2 --quantity 15 --sell-date 2023-06-09
+py main.py sell --product Icecream --sell-price 2.3 --quantity 8 --sell-date 2023-05-01
+
+
+3. Export Command:
+Type: (py or python) main.py export --file expired --date TODAY
+Type: (py or python) main.py export --file bought --date TODAY
+
+Arguments:
+  -h, --help            show this help message and exit
+  --file {expired,bought,sold}
+                        Data to be exported to .csv file
+  --date DATE           Choose date of interest(format YYYY-MM-DD)
+
+Examples:
+py main.py export --file expired --date 2024-09-03
+py main.py export --file bought --date 2023-03-07
+
+
+4. Profit Command:
+Type: (py or python) main.py profit --date DATE
+
+Arguments:
+  -h, --help   show this help message and exit
+  --date DATE  Choose date of interest(format YYYY-MM-DD)
+
+Examples:
+py main.py profit --date 2028-05-05
+py main.py profit --date 2021-01-01
+
+
+5. Plot Command:
+Type: (py or python) main.py plot --file bought
+Type: (py or python) main.py plot --file sold
+Type: (py or python) main.py plot --file inventory
+
+Examples:
+py main.py plot --file inventory
+py main.py plot --file bought
+
+Arguments:
+  -h, --help            show this help message and exit
+  --file {bought,sold,inventory} File to be plotted
+
+
+6. Advance time Command:
+Type: (py or python) main.py advance time --advance_time
+
+Arguments:
+  -h, --help            show this help message and exit
+  --advance_time	choose a number and jump forward in time
+
+Examples:
+py main.py advance_time --advance_time 5
+
+
+7. Set time Command:
+Type: (py or python) main.py settime --settime DATE
+
+Arguments:
+  -h, --help            show this help message and exit
+  --settime		choose a date as interest
+  --settime today	resets the chosen dates into today's date
+
+Examples:
+py main.py setdate --setdate 2025-01-01
+py main.py setdate --setdate today
+
+
+8. Reset Command:
+Type: (py or python) main.py reset --file bought
+Type: (py or python) main.py reset --file sold
+Type: (py or python) main.py reset --file inventory
+Type: (py or python) main.py reset --file all
+
+Arguments:
+  -h, --help            show this help message and exit
+  --file {bought,sold,inventory,all}
+			Files to be resetted
+
+Examples:
+py main.py reset --file inventory
+py main.py reset --file all
