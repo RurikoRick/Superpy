@@ -32,7 +32,7 @@ Arguments:
 
 Examples:
 py main.py buy --product Steak --buy-price 2.8 --quantity 10 --buy-date 2023-03-08 --exp-date 2025-08-08
-py main.py buy --product Icecream--buy-price 0.5 --quantity 60 --buy-date 2023-06-08 --exp-date 2024-03-02
+py main.py buy --product Icecream --buy-price 0.5 --quantity 60 --buy-date 2023-06-08 --exp-date 2024-03-02
 
 
 2. Sell Command:
@@ -62,7 +62,7 @@ Arguments:
 
 Examples:
 py main.py export --file expired --date 2024-09-03
-py main.py export --file bought --date 2023-03-07
+py main.py export --file bought --date 2024-01-07
 
 
 4. Profit Command:
